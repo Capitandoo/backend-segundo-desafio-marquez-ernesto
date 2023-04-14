@@ -128,6 +128,9 @@ const test = async () => {
         stock: 25,
         });
         console.log(newProduct4);
+
+        console.log (await productos.getProducts ());
+        
     }
 
 
