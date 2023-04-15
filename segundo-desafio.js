@@ -13,7 +13,7 @@ class ProductManager {
             const products = JSON.parse (await fs.promises.readFile (this.path, 'utf8'));
             return products;
         } catch (error) {
-
+            console.log (error);
         }
     }
 
@@ -29,7 +29,7 @@ class ProductManager {
             await fs.promises.writeFile (this.path, JSON.stringify (products));
             return newProduct;
         } catch (error) {
-
+            console.log (error);
         }
     }
 
@@ -42,7 +42,7 @@ class ProductManager {
             }
         return data;
     } catch (error) {
-
+        console.log (error);
     }
     }
 
@@ -57,6 +57,7 @@ class ProductManager {
             await fs.promises.writeFile (this.path, JSON.stringify (products));
             return products[index];
         } catch (error) {
+            console.log (error);
         }
     }
 
@@ -71,7 +72,7 @@ class ProductManager {
             await fs.promises.writeFile (this.path, JSON.stringify (products));
             return console.log (`El Producto con id ${id} a sido borrado`);
         } catch (error) {
-
+            console.log (error);
         }
     }
 }
